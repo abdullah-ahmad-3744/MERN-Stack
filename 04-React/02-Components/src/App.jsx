@@ -1,13 +1,13 @@
 import './App.css'
-import FirstComponent from './components/FirstComponent'
+import Header from './components/Header'
 function App() {
 
 
   return (
     <>
     <div className="container">
+      <Header></Header>
       <h1>React App</h1>
-      <FirstComponent></FirstComponent>
     </div>
     </>
   )
