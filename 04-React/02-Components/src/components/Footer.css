@@ -10,9 +10,10 @@ html,body{
 }
 .footer-container{
     background-color: rgb(24, 22, 22);
-    height: 100px;
+    height: 90px;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
