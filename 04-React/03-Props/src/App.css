@@ -25,16 +25,3 @@ html,body{
     /* border: 3px solid yellow; */
     gap: 20px;
 }
-.card {
-    /* border: 3px solid red; */
-    height: 250px;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: rgb(10, 10, 130);
-    border-radius: 10px;
-    border: none;
-    box-shadow: 1px 1px 5px;
-}
