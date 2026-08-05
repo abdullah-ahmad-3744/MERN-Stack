@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.loader-container{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #162522;
+  text-align: center;
+  gap: 6px;
+}
+
+.loader{
+  height: 60px;
+  width: 60px;
+  border-bottom: 6px solid #FF0086;
+  border-left: 6px solid #FFFFFF;
+  border-right: 6px solid #FFFFFf;
+  border-top: 6px solid #FFFFFF;
+  border-radius: 50%;
+  animation: move 1s linear infinite;
+}
+
+@keyframes move{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.loader-container h1{
+  color: transparent;
+  background: linear-gradient(#FF0086,#FFFFFF);
+  background-clip: text;
+  text-transform: capitalize;
+  letter-spacing: 3px;
+
+}
