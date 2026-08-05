@@ -20,6 +20,7 @@ function App() {
     email: "",
     comments: "",
     isVisible: true,
+    favoriteCar : ''
   });
 
   function changeHandler(event) {
@@ -31,10 +32,15 @@ function App() {
       };
     });
   }
-  console.log(formData);
+
+  function submitHandler(event){
+    event.preventDefault()
+    console.log('Printing the entire form data.....');
+    console.log(formData);
+  }
   return (
     <div>
-      <form action="">
+      <form action="" onSubmit={submitHandler}>
         <input
           type="text"
           name="firstName"
@@ -109,7 +115,17 @@ function App() {
           onChange={changeHandler}
         />
         </fieldset>
-        
+         <label htmlFor="favoriteCar">Select your favorite car :</label>
+        <select name="favoriteCar" id="favoriteCar" value={formData.favoriteCar} onChange={changeHandler}>
+          <option value="BMW">BMW</option>
+          <option value="Ferrari">Ferrari</option>
+          <option value="Thar">Thar</option>
+          <option value="Scorpio">Scorpio</option>
+          <option value="fortuner">fortuner</option>
+        </select>
+        <br />
+        <br />
+        <button>Submit Form</button>
       </form>
     </div>
   );
