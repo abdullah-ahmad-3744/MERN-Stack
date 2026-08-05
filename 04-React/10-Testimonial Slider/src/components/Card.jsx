@@ -4,10 +4,10 @@ function Card(props){
     let review = props.review
     return (
         <div className="flex flex-col md:relative">
-            <div className="absolute top-[-4rem] z-[10] m-auto">
-                <img className="aspect-square rounded-full h-[100px] w-[100px] z-25 object-cover"
+            <div className="absolute top-\[4rem\] z-\[10\] m-auto">
+                <img className="aspect-square rounded-full h-\[100px\] w-\[100px\] z-25 object-cover"
                 src={review.image} alt="" srcSet="" />
-                <div className="absolute h-[100px] w-[100px] rounded-full bg-violet-500 top-[-4px] z-[-10] left-[8px]"></div>
+                <div className="absolute h-\[100px\] w-\[100px\] rounded-full bg-violet-500 top-\[-4px\] z-\[-10\] left-\[8px\]"></div>
             </div>
             
             <div className="text-center">
