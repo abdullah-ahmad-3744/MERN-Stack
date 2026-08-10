@@ -10,12 +10,10 @@ function Form() {
     city: "",
     state: "",
     zip: "",
-    comments: "",
-    candidates: "",
-    offers: "",
-    everything : '',
-    sameAsEmail : '',
-    noPushNotification : ''
+    comments: false,
+    candidates: false,
+    offers: false,
+    pushNotifications : ''
   });
 
   function changeHandler(event) {
@@ -28,8 +26,13 @@ function Form() {
       };
     });
   }
+
+  function submitHandler(event){
+    event.preventDefault();
+    console.log(formData);
+  }
   return (
-    <div>
+    <form onSubmit={submitHandler}>
       <div className="first-name">
         <label htmlFor="firstName">First Name</label>
         <input
@@ -69,7 +72,8 @@ function Form() {
           id="country"
           name="country"
           id="country"
-          value={formData.country}
+          value={formData.country.value}
+          onChange={changeHandler}
         >
           <option value="Pakistan">Pakistan</option>
           <option value="China">China</option>
@@ -121,46 +125,63 @@ function Form() {
           placeholder="Enter zip code"
         />
       </div>
-      <div className="by-email">
-        <h4>By Email</h4>
+      <fieldset className="by-email">
+
+        <legend>By Email</legend>
+
         <div className="comments">
              <input
           type="checkbox"
           name="comments"
           id="by-email"
-          value={formData.comments}
+          checked={formData.comments}
           onChange={changeHandler}
         />
-          <label htmlFor="by-email">Comments</label>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+        <label htmlFor="by-email">Comments</label>
+          <p>Get notified when someone posts a comment on a posting.</p>
         </div>
+
+
+
+
         <div className="candidates">
-            <input type="checkbox" name="comments" id="comments" value={formData.comments} onChange={changeHandler}  />
+            <input 
+            type="checkbox" 
+            name="candidates" 
+            id="comments" 
+            checked={formData.candidates}
+             onChange={changeHandler}  
+             />
             <label htmlFor="candidates">Candidates</label>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Get notified when a candiate applies for a job.</p>
         </div>
+
+
         <div className="offers">
-            <input type="checkbox" name="offers" id="offers" value={formData.offers} onChange={changeHandler}  />
+            <input type="checkbox" name="offers" id="offers" checked={formData.offers} onChange={changeHandler}  />
             <label htmlFor="offers">Offers</label>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi.</p>
+            <p>Get notified when a candidate accepts or rejects an offer.</p>
         </div>
-      </div>
-      <div className="push-notification">
+      </fieldset>
+
+      <fieldset>
+        <legend>Push Notification</legend>
+        <p>These are delivered via sms to your phone.</p>
         <div className="everything">
-            <input type="radio" name="pushNotifications" id="pushNotifications" value={formData.everything} onChange={changeHandler}  />
+            <input type="radio" name="pushNotifications" id="pushEverything" value="Everything" onChange={changeHandler}  />
         <label htmlFor="everything">Everything</label>
         </div>
         <div className="same-as-email">
-            <input type="radio" name="pushNotifications" id="pushNotifications" value={formData.everything} onChange={changeHandler} />
+            <input type="radio" name="pushNotifications" id="sameAsEmail" value="Same as email" onChange={changeHandler} />
             <label htmlFor="sameAsEmail">Same as email</label>
         </div>
         <div className="no-push-notifications">
-            <input type="radio" name="pushNotifications" id="pushNotifications" value={formData.noPushNotification} onChange={changeHandler} />
+            <input type="radio" name="pushNotifications" id="noPushNotifications" value="No push notifications" onChange={changeHandler} />
             <label htmlFor="noPushNotifications">No push notifications</label>
         </div>
-      </div>
+      </fieldset>
       <button>save</button>
-    </div>
+    </form>
   );
 }
 export default Form;
