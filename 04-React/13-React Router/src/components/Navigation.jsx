@@ -2,7 +2,7 @@ import { Link, NavLink} from "react-router-dom";
 
 function Navigation(){
     return (
-        <div>
+        <div className="navigation-container">
             <ul>
                 <li><NavLink to='/'>Home</NavLink></li>
                 <li> <NavLink to='/about'>About</NavLink></li>

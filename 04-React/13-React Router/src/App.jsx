@@ -8,10 +8,11 @@ import Labs from "./components/Labs";
 import Contact from "./components/Contact";
 import Navigation from "./components/Navigation";
 import MainHaider from "./components/MainHeader";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <Navigation />
 
       <Routes>
@@ -24,6 +25,7 @@ function App() {
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
+      <Footer/>
     </div>
   );
 }
