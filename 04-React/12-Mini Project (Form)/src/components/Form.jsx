@@ -5,7 +5,7 @@ function Form() {
     firstName: "",
     lastName: "",
     email: "",
-    country: "",
+    country: "Pakistan",
     street: "",
     city: "",
     state: "",
@@ -13,7 +13,7 @@ function Form() {
     comments: false,
     candidates: false,
     offers: false,
-    pushNotifications : ''
+    pushNotification : ''
   });
 
   function changeHandler(event) {
