@@ -1,14 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink} from "react-router-dom";
 
 function Navigation(){
     return (
         <div>
             <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li> <Link to='/about'>About</Link></li>
-                <li><Link to='/support'>Support</Link></li>
-                <li><Link to='/labs'>Labs</Link></li>
-                <li><Link to='/contact'>Contact</Link></li>
+                <li><NavLink to='/'>Home</NavLink></li>
+                <li> <NavLink to='/about'>About</NavLink></li>
+                <li><NavLink to='/support'>Support</NavLink></li>
+                <li><NavLink to='/labs'>Labs</NavLink></li>
+                <li><NavLink to='/contact'>Contact</NavLink></li>
             </ul>
         </div>
     )
