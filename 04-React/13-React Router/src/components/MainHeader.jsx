@@ -1,11 +1,9 @@
 import { Outlet } from "react-router-dom"
-
-function Home() {
+function MainHaider(){
     return (
-        <div>
+      <div>
             <Outlet/>
-            <h1>Welcome to Home Page</h1>
         </div>
     )
 }
-export default Home
+export default MainHaider
