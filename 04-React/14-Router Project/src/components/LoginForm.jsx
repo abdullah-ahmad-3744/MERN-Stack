@@ -1,7 +1,11 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function LoginForm() {
+function LoginForm({setIsLoggedIn}) {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -20,16 +24,22 @@ function LoginForm() {
   function showPasswordHandler() {
     setShowPassword(!showPassword);
   }
+  function loginSubmitHandler(event) {
+    event.preventDefault();
+    setIsLoggedIn(true)
+    toast.success('Logged In')
+    navigate('/dashboard')
+  }
   return (
-    <form action="">
+    <form action="" onSubmit={loginSubmitHandler}>
       <label>
         <p>
           Email Address <sup>*</sup>
         </p>
         <input
           type="email"
-          name="firstName"
-          id="firstName"
+          name="email"
+          id="email"
           required
           value={formData.email}
           placeholder="Enter email id"

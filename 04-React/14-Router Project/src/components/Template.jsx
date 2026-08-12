@@ -25,7 +25,7 @@ function Template(props){
                 {
                     formType === 'signup' ? 
                     (<SignupForm/>) : 
-                    (<LoginForm/>)
+                    (<LoginForm setIsLoggedIn={setIsLoggedIn}/>)
                 }
                 {/* Horizontal lines and the OR text */}
 
