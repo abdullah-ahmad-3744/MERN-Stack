@@ -1,8 +1,12 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-function SignupForm() {
+function SignupForm({setIsLoggedIn}) {
+    const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -19,6 +23,22 @@ function SignupForm() {
       };
     });
   }
+  function showPasswordHandler(){
+    setShowPassword(!showPassword)
+  }
+  function confirmPasswordHandler(){
+    setShowConfirmPassword(!showConfirmPassword)
+  }
+  function submitHandler(event) {
+    event.preventDefault()
+    if (formData.password !== formData.confirmPassword) {
+        toast.error('Password do not match')
+        return ;
+    }
+    setIsLoggedIn(true)
+    toast.success('Account created successfully')
+    navigate('/dashboard')
+  }
   return (
     <div>
       {/* Student Instructor tab */}
@@ -27,7 +47,7 @@ function SignupForm() {
         <button>Instructor</button>
       </div>
       {/* Sing Up form */}
-      <form action="">
+      <form action="" onSubmit={submitHandler}>
         {/* First Name and Last Name */}
         <div>
           <label htmlFor="">
@@ -111,8 +131,8 @@ function SignupForm() {
             placeholder="Confirm Password"
             onChange={changeHandler} />
 
-             <span onClick={showPasswordHandler}>
-              {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
+             <span onClick={confirmPasswordHandler}>
+              {showConfirmPassword ? <FaRegEye /> : <FaRegEyeSlash />}
             </span>
           </label>
         </div>

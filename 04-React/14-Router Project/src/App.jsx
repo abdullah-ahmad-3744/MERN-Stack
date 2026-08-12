@@ -24,7 +24,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login setIsLoggedIn= {setIsLoggedIn} />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/signup" element={<SingUp />} />
+          <Route path="/signup" element={<SingUp setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="*" element={<PageNotFound/>} />
         </Route>
       </Routes>

@@ -9,6 +9,7 @@ function SingUp({setIsLoggedIn}){
             desc1 = 'Build skills for today, tommorow and beyond.'
             desc2 = 'Education to future your career.'
             image = {signupImage}
+            formType='signup'
             setIsLoggedIn= {setIsLoggedIn}/>
         </div>
     )

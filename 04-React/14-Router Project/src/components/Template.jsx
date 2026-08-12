@@ -8,6 +8,7 @@ function Template(props){
     const image = props.image
     const formType = props.formType
     const setIsLoggedIn = props.setIsLoggedIn
+    console.log(formType);
     return (
         <div>
             {/* Left part */}
@@ -24,7 +25,7 @@ function Template(props){
                 {/* Form for the type of Login or Signup */}
                 {
                     formType === 'signup' ? 
-                    (<SignupForm/>) : 
+                    (<SignupForm setIsLoggedIn={setIsLoggedIn}/>) : 
                     (<LoginForm setIsLoggedIn={setIsLoggedIn}/>)
                 }
                 {/* Horizontal lines and the OR text */}
