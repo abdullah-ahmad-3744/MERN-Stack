@@ -3,7 +3,7 @@ import loginImage from '../assets/login.png'
 
 function Login({setIsLoggedIn}){
     return (
-        <div className="min-h-screen flex justify-center items-center bg-mist-900 text-white">
+        <div className="min-h-screen flex justify-center items-center bg-gray-950 text-white">
             <Template
             title = 'Welcome Back'
             desc1='Build skills for today, tommorow and beyond'
