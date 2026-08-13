@@ -13,13 +13,13 @@ import { FaGoogle } from "react-icons/fa";function Template(props){
         <div className="flex w-11/12 max-w-[860px] py-6 mx-auto gap-y-0 gap-x-16 justify-between bg-gray-950">
             {/* Left part */}
             {/* Template Titel */}
-            <div className="w-11/12 max-w-[400px] text-white ">
+            <div className="w-11/12 max-w-[400px] text-white -mt-3">
                 {/* Heading or title */}
                 <h1 className="text-gray-50 font-semibold text-[1.700rem] leading-[2.375rem] ">{title}</h1>
                 {/* Description */}
                 <p className="flex flex-col text-[1.125rem] mt-1 leading-[1.625rem]">
-                    <span className="text-gray-100">{desc1}</span>
-                    <span className="text-blue-100 italic">{desc2}</span>
+                    <span className="text-gray-300">{desc1}</span>
+                    <span className="text-blue-300 italic">{desc2}</span>
                 </p>
 
                 {/* Form for the type of Login or Signup */}

@@ -29,6 +29,8 @@ function LoginForm({setIsLoggedIn}) {
     setIsLoggedIn(true)
     toast.success('Logged In')
     navigate('/dashboard')
+    console.log('Printing Login details');
+    console.log(formData);
   }
   return (
     <form action="" onSubmit={loginSubmitHandler} className="flex flex-col w-full gap-y-4 mt-3">

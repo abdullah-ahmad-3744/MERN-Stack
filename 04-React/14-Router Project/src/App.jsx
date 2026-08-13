@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import SingUp from "./pages/SignUp";
 import PageNotFound from "./components/PageNotFound";
 import { useState } from "react";
+import PrivteRoute from "./components/PrivateRoute";
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -19,13 +20,18 @@ function App() {
 
       <Routes>
         <Route path="/" element={<ParentRoute />}>
-          <Route index element={<Home />} />
+          <Route index element={<Home isLoggedIn={isLoggedIn}/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login setIsLoggedIn= {setIsLoggedIn} />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          
           <Route path="/signup" element={<SingUp setIsLoggedIn={setIsLoggedIn} />} />
           <Route path="*" element={<PageNotFound/>} />
+          <Route path="/dashboard" element={
+            <PrivteRoute isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}>
+              <Dashboard />
+            </PrivteRoute>
+            } />
         </Route>
       </Routes>
     </div>

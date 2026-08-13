@@ -30,6 +30,8 @@ function SignupForm({ setIsLoggedIn }) {
   function confirmPasswordHandler() {
     setShowConfirmPassword(!showConfirmPassword);
   }
+
+  
   function submitHandler(event) {
     event.preventDefault();
     if (formData.password !== formData.confirmPassword) {
@@ -39,7 +41,18 @@ function SignupForm({ setIsLoggedIn }) {
     setIsLoggedIn(true);
     toast.success("Account created successfully");
     navigate("/dashboard");
+    const accoutData = {
+      ...formData
+    }
+    const finalData = {
+      ...accoutData,
+      accountType
+    }
+    console.log('Printing Final Account Data');
+    console.log(finalData);
   }
+
+
   return (
     <div className="">
       {/* Student Instructor tab */}
@@ -146,7 +159,7 @@ function SignupForm({ setIsLoggedIn }) {
               Confirm Password <sup className="text-pink-200">*</sup>
             </p>
             <input className="bg-gray-800 rounded-[0.40rem] w-full p-[4px] text-gray-50"
-              type={showPassword ? "text" : "password"}
+              type={showConfirmPassword ? "text" : "password"}
               name="confirmPassword"
               id="confirmPassword"
               value={formData.confirmPassword}

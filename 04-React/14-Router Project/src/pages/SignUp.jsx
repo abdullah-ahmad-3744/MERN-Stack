@@ -7,7 +7,7 @@ function SingUp({setIsLoggedIn}){
             <Template
             title='Join to millions learning to code with studyNotion for free'
             desc1 = 'Build skills for today, tommorow and beyond.'
-            desc2 = 'Education to future your career.'
+            desc2 = 'Education to future-proof your career.'
             image = {signupImage}
             formType='signup'
             setIsLoggedIn= {setIsLoggedIn}/>
