@@ -1,6 +1,6 @@
 function Dashboard(){
     return (
-        <div className="min-h-screen flex justify-center items-center bg-mist-900 text-white">
+        <div className="flex justify-center items-center text-white text-3xl h-screen">
             <h1>Welcome to StudyNotion</h1>
         </div>
     )

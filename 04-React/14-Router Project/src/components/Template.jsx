@@ -1,7 +1,7 @@
 import frame from '../assets/frame.png'
 import LoginForm from './LoginForm'
 import SignupForm from './SingupForm'
-function Template(props){
+import { FaGoogle } from "react-icons/fa";function Template(props){
     const title = props.title
     const desc1 = props.desc1
     const desc2 = props.desc2
@@ -10,16 +10,16 @@ function Template(props){
     const setIsLoggedIn = props.setIsLoggedIn
     console.log(formType);
     return (
-        <div>
+        <div className="flex w-11/12 max-w-[860px] py-12 mx-auto gap-y-0 gap-x-12 justify-between">
             {/* Left part */}
             {/* Template Titel */}
-            <div>
+            <div className="w-11/12 max-w-[400px] mx-0 text-white ">
                 {/* Heading or title */}
-                <h1>{title}</h1>
+                <h1 className="text-gray-50 font-semibold text-[1.875rem] leading-[2.375rem] ">{title}</h1>
                 {/* Description */}
-                <p>
-                    <span>{desc1}</span>
-                    <span>{desc2}</span>
+                <p className="flex flex-col text-[1.125rem] mt-1 leading-[1.625rem]">
+                    <span className="text-gray-100">{desc1}</span>
+                    <span className="text-blue-100 italic">{desc2}</span>
                 </p>
 
                 {/* Form for the type of Login or Signup */}
@@ -30,22 +30,25 @@ function Template(props){
                 }
                 {/* Horizontal lines and the OR text */}
 
-                <div>
-                    <div></div>
-                    <p>OR</p>
-                    <div></div>
+                <div className="flex w-full items-center my-2 gap-x-2">
+                    <div className="h-[1px] w-full bg-richblack-700"></div>
+                    <p className="text-richblack-700 font-medium leading-[1.375rem]">OR</p>
+                    <div className="h-[1px] w-full bg-richblack-700"></div>
                 </div>
 
-                <button>
+                <button className="w-full flex items-center justify-center rounded-[8px] font-medium text-richblack-100 border-gray-700 border px-[12px] py-[8px] gap-x-2 mt-2">
+                    <FaGoogle />
                     <p>Sign in with Google</p>
                 </button>
             </div>
 
             {/* Right part */}
             {/* Image part of the Form */}
-            <div>
-                <img src={frame} alt="Frame image" height={504} width={558} loading='lazy' srcSet='' />
-                <img src={image} alt="Front image for the form template"  width={558} height={490} srcSet="" />
+            <div  className="relative w-11/12 max-w-[450px]">
+                <img src={frame} alt="Frame image" height={490} width={500} loading='lazy' srcSet=''
+                className="absolute -top-2 right-2 " />
+                <img src={image} alt="Front image for the form template"  width={400} height={370} srcSet="" 
+                className='absolute rounded-md'/>
             </div>
         </div>
     )

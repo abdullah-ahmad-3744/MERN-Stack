@@ -5,11 +5,10 @@ function Navbar(props) {
   let isLoggedIn = props.isLoggedIn
   let setIsLoggedIn = props.setIsLoggedIn
   return (
-    <div className="flex bg-black text-white justify-evenly">
+    <div className="flex justify-between items-center w-11/12 max-w[1160px] py-4 mx-auto">
       {/* Logo part */}
       <div className="">
         <Link to="/">
-          {" "}
           <img
             src={Logo}
             alt="StudyNotion logo image"
@@ -23,7 +22,7 @@ function Navbar(props) {
 
       {/* Navigation Menu */}
       <div>
-        <ul className="flex gap-3 font-bold">
+        <ul className="flex gap-x-6 text-gray-50">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -38,25 +37,26 @@ function Navbar(props) {
 
       {/* Buttons */}
 
-      <div className="flex ml-5 mr-3 gap-5">
+      <div className="flex items-center">
         { !isLoggedIn &&
           <Link to="/login">
-            <button>Login</button>
+            <button className="bg-gray-900 text-gray-50 py-[4px] px-[11px] mx-2 rounded-[5px] border border-gray-700 ">Log in</button>
           </Link>
         }
         { !isLoggedIn &&
           <Link to="/signup">
-            <button>SignUp</button>
+            <button className="bg-gray-900 text-gray-50 py-[4px] px-[11px] rounded-[5px] border border-gray-700 ">Sign up</button>
           </Link>
         }
         { isLoggedIn &&
           <Link to="/dashboard">
-            <button>Dashboard</button>
+            <button className="bg-gray-900 text-gray-50 py-[4px] px-[11px] rounded-[5px] border border-gray-700 ">Dashboard</button>
           </Link>
         }
         { isLoggedIn &&
           <Link to="/">
-            <button onClick={() => {
+            <button className="bg-gray-900 text-gray-50 py-[4px] px-[11px] rounded-[5px] border border-gray-700 "
+            onClick={() => {
               setIsLoggedIn(false)
               toast.success("Logged Out")
             }}>Logout</button>
