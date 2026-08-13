@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import Spinner from "./Spinner"
+import useGif from "../hooks/useGif"
 
 
 
@@ -8,22 +9,10 @@ import Spinner from "./Spinner"
 const API_KEY = import.meta.env.VITE_GIPHY_API_KEY
 
 function Tag(){ 
-    const [loading,setLoading] = useState(false)
-    const [gif,setGif] = useState('')
-    const [tag,setTag] = useState('car')
-    async function fetchData() {
-        setLoading(true)
-        const url = `https://api.giphy.com/v1/gifs/random?api_key=${API_KEY}&tag=${tag}`
-        let output = await axios.get(url)
-        let imageSource = output.data.data.images.downsized_large.url
-        setGif(imageSource)
-        setLoading(false)
-    }
-    useEffect( () => {
-        fetchData()
-    },[])
+     const [tag,setTag] = useState('car')
+    const {gif, loading , fetchData} = useGif(tag)
     function clickHandler(){
-        fetchData()
+        fetchData(tag)
     }
 
     function changeHandler(event){
