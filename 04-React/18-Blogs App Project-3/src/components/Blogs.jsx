@@ -1,0 +1,6 @@
+function Blogs (){
+    return <div>
+        <h1>Blogs Component</h1>
+    </div>
+}
+export default Blogs
