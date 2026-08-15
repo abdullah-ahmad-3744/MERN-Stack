@@ -1,7 +1,7 @@
 import './Spinner.css'
 function Spinner(){
     return(
-        <div className='h-screen w-full flex justify-center items-center'>
+        <div className='w-full h-screen flex justify-center items-center -mt-10'>
              <div className='loader'></div>
         </div>
     )
