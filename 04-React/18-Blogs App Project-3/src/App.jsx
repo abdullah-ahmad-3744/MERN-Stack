@@ -15,7 +15,7 @@ function App() {
     fetchBlogsPosts()
   },[])
   return (
-    <div className='flex flex-col items-center'>
+    <div className='w-full h-full flex flex-col items-center justify-center'>
       <Header/>
       <Blogs/>
       <Pagination/>
