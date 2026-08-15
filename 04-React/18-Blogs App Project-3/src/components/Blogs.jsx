@@ -18,7 +18,7 @@ function Blogs (){
                     <p>{post.content}</p>
                     <div>{post.tags.map((tag,index) => {
                         return (
-                            <span key={index}>#{tag}</span>
+                            <span key={index}>{` #${tag}`}</span>
                         )
                     })}</div>
                     </div>
