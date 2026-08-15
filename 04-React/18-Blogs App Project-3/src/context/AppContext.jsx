@@ -19,7 +19,6 @@ function AppContextProvider({children}){
             setPage(data.page)
             setPosts(data.posts)
             setTotalPages(data.totalPages)
-            console.log(data);
         } catch (error) {
             console.log("Error in fetching data : ",error)
             setPage(1)
