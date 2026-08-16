@@ -16,6 +16,5 @@ export const CounterSlice = createSlice({
         }
     }
 })
-console.log("Value of Count printing in Slice : ",initialState.value);
 export const {increment,decrement} = CounterSlice.actions
 export default CounterSlice.Reducer
