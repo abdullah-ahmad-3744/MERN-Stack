@@ -10,21 +10,15 @@ import { ThemeContext } from "./context/ThemeContext.jsx";
 import { useContext } from "react";
 
 function App() {
-  const { theme, setTheme } = useContext(ThemeContext);
-  function clickHandler() {
-     if (theme === "light") {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  }
+  const { theme, setTheme, themeHandler } = useContext(ThemeContext);
+ 
 
   return (
     <div className={theme === 'light' ? ('light') : ('dark')}>
       <Navbar />
        <button
         className="cursor-pointer border border-blue-400 px-5 py-1 rounded-md mt-5 font-bold"
-        onClick={clickHandler}
+        onClick={() => themeHandler()}
       >
         Toggle Theme
       </button>

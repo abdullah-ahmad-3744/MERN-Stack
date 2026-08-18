@@ -5,11 +5,21 @@ const ThemeContext = createContext();
 
 function ThemeContextProvider({ children }) {
     const [theme, setTheme] = useState("light");
+
+     function themeHandler() {
+     if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }
+
   return (
     <ThemeContext.Provider
       value={{
-        theme : theme,
-        setTheme : setTheme,
+        theme,
+        setTheme,
+        themeHandler
       }}
     >
       {children}
