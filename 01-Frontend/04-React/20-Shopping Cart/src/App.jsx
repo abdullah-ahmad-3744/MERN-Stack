@@ -1,10 +1,20 @@
 
 import './App.css'
-
+import Navbar from './components/Navbar'
+import Cart from './pages/Cart'
+import Home from './pages/Home'
+import {Routes} from 'react-router'
+import { Route } from 'react-router'
 function App() {
   return (
     <div>
-      <h1 className='bg-black text-white text-center text-2xl font-bold py-2'>Shopping Cart Project</h1>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element = {<Home/>} />
+        <Route path='/cart' element = {<Cart/>} />
+
+      </Routes>
+
     </div>
   )
 }
