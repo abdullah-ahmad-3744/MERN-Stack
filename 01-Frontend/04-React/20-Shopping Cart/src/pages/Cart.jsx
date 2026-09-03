@@ -10,11 +10,11 @@ function Cart(){
         setTotalAmount(cart.reduce( (acc,curr) =>  acc + curr.price,0))
     },[cart])
     return(
-        <div>
+        <div className='flex'>
             {
                 cart.length > 0 ?
                  (
-                 <div>
+                 <div className='flex'>
 
                     <div>
                     {

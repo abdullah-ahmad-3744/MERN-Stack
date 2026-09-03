@@ -8,7 +8,9 @@ import { Route } from 'react-router'
 function App() {
   return (
     <div>
-      <Navbar/>
+      <div className='bg-slate-900 text-white'>
+        <Navbar/>
+      </div>
       <Routes>
         <Route path="/" element = {<Home/>} />
         <Route path='/cart' element = {<Cart/>} />
