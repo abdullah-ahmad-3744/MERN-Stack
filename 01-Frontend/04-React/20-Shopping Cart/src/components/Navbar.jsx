@@ -2,15 +2,15 @@ import { FaShoppingCart } from "react-icons/fa";
 import { NavLink } from "react-router";
 function Navbar() {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-around">
       <NavLink to="/">
-        <img
-          src="https://t3.ftcdn.net/jpg/03/99/53/44/240_F_399534445_zG1tMcAn0q7bCaPw2Lp5ZWiBiBgQYxvN.jpg"
+        <img height={50} width={50}
+          src='https://play-lh.googleusercontent.com/LHuO24K8rzj0pdvwLTKlApnBp_IX1pBnfLskqmuh8okHGS0pCicRTX6BjMRyxgkxhdttbeEyi6evv33msqGU'
           alt=""
           srcSet=""
         />
       </NavLink>
-      <div>
+      <div className="flex gap-4 justify-center items-center">
         <NavLink to="/">
           <p>Home</p>
         </NavLink>

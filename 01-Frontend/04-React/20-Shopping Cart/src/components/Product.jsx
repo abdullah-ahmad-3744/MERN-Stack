@@ -1,7 +1,23 @@
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import toast from 'react-hot-toast';
+import { add } from "../redux/slices/CartSlice";
+import { remove } from "../redux/slices/CartSlice";
 
 function Product({post}){
-    const [selected,setSelected] = useState(false)
+    const {cart} = useSelector((state) => state)
+    const dispatch = useDispatch()
+
+    const addToCartHadler = () => {
+        dispatch(add(post))
+        toast.success('Item added to Cart')
+    }
+
+    const removeFromCartHandler = () => {
+        dispatch(remove(post.id))
+        toast.success('Item removed from Cart')
+    }
+
     return(
         <div>
             <div>
@@ -16,11 +32,11 @@ function Product({post}){
             <div>
                 <p>{post.price}</p>
             </div>
-            <button>
                 {
-                    selected ? (<p>Remove Item</p>) : (<>Add to Cart</>)
+                    cart.some((p) => p.id == post.id) ? 
+                    (<button onClick={removeFromCartHandler}>Remove Item</button>) :
+                    (<button onClick={addToCartHadler}>Add to Cart</button>)
                 }
-            </button>
         </div>
     )
 }

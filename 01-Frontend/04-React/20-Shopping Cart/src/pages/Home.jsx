@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import Product from "../components/Product";
+import Spinner from "../components/Spinner";
 
 
 function Home(){
@@ -27,7 +28,7 @@ function Home(){
     return(
         <div>
             {
-                loading ? (<p>Loading...</p>) :
+                loading ? (<Spinner/>) :
                  (
                     posts.length > 0 ? 
                     (
