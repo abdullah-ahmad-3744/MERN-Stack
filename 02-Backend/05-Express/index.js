@@ -11,6 +11,10 @@ app.use('/services', (req,res) => {
 app.use('/contact',(req,res) => {
     res.send('Welcome to Contact Page')
 })
+app.use('/about/:id/:userName', (req,res) => {
+    console.log(req.params);
+    res.send('Welcome to Dashboard')
+})
 app.use('/',(req,res) => {
     res.send('Welcome to Home Page')
 })
