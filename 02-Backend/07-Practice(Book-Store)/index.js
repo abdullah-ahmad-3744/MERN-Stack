@@ -12,14 +12,20 @@ app.get('/', (req,res) => {
 })
 
 // Get request for all books
-app.get('/book',(req,res) => {
-    res.send(data)
-})
+// app.get('/book',(req,res) => {
+//     res.send(data)
+// })
 // Get Request for a Book based on ID
 app.get('/book/:id',(req,res) => {
     const bookId = parseInt(req.params.id)
     const bookBasedOnId = data.find(book => book.id === bookId )
     res.send(bookBasedOnId)
+})
+
+// Getting books of an based on author parameter
+app.get('/book',(req,res) => {
+    const booksBySameAuthor = data.filter(book => book.author === req.query.author);
+    res.send(booksBySameAuthor)
 })
 
 // Post request for saving a book 
