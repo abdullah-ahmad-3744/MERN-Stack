@@ -31,10 +31,32 @@ app.post('/book',(req,res) => {
 
 //  Delete request for deleting a book
 app.delete('/book/:id',(req,res) => {
-    const targetBookId = parseInt(req.params.id)
-    console.log(targetBookId);
-    const updatedData = data.filter( (book) => book.id !== targetBookId)
-    res.send(updatedData)
+    const id = parseInt(req.params.id)
+    const index = data.findIndex(book => book.id === id)
+    data.splice(index,1)
+    res.send('Successfully deleted')
+})
+
+
+// Put request for updating 
+app.put('/book', (req,res) => {
+    const targetBook = data.find(book => book.id === req.body.id);
+    targetBook.author = req.body.author;
+    targetBook.name = req.body.name;
+    res.send('Changes updated successfully')
+})
+
+// patch request for a partial change
+app.patch('/book', (req,res) => {
+    const targetBook = data.find(book => book.id === req.body.id);
+    if (req.body.author) {
+        targetBook.author = req.body.author;
+    }
+    if (req.body.name) {
+        targetBook.name = req.body.name;
+    }
+    
+    res.send('Patch updated');
 })
 app.listen(PORT, () => {
 console.log(`App is listening at PORT : ${PORT}`);
